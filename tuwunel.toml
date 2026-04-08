@@ -1,0 +1,10 @@
+[global]
+server_name = "localhost"
+database_path = "/var/lib/tuwunel"
+port = [8008]
+address = "0.0.0.0"
+allow_registration = true
+registration_token = "ottie-dev-token"
+allow_federation = false
+trusted_servers = []
+log = "info"

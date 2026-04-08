@@ -1,0 +1,13 @@
+services:
+  tuwunel:
+    image: ghcr.io/matrix-construct/tuwunel:latest
+    restart: unless-stopped
+    command: ["-c", "/etc/tuwunel/tuwunel.toml"]
+    volumes:
+      - ./tuwunel.toml:/etc/tuwunel/tuwunel.toml:ro
+      - tuwunel-data:/var/lib/tuwunel
+    ports:
+      - "8008:8008"
+
+volumes:
+  tuwunel-data:
