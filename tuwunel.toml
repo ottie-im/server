@@ -16,20 +16,12 @@ log = "info"
 client = "https://ottie.claws.company"
 server = "ottie.claws.company:443"
 
-# Google OIDC 登录配置
-# TODO: 需要在 Google Cloud Console 创建 OAuth 2.0 凭证
-# 1. 访问 https://console.cloud.google.com/apis/credentials
-# 2. 创建 OAuth 2.0 Client ID（Web application）
-# 3. Authorized redirect URI 填：
-#    https://ottie.claws.company/_matrix/client/unstable/login/sso/callback/<client_id>
-# 4. 把 client_id 和 client_secret 填到下面
-#
-# 取消注释以下配置即可启用：
-#
-# [[global.identity_provider]]
-# brand = "Google"
-# client_id = "YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"
-# client_secret = "YOUR_GOOGLE_CLIENT_SECRET"
-# issuer_url = "https://accounts.google.com"
-# callback_url = "https://ottie.claws.company/_matrix/client/unstable/login/sso/callback/YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"
-# default = true
+# Google OIDC 登录（已配置）
+# TODO: 临时域名，最终改为 ottie 正式域名
+[[global.identity_provider]]
+brand = "Google"
+client_id = "1038048661795-mh80t40gvgquv6gspeup6nfosj2gfdrr.apps.googleusercontent.com"
+client_secret = "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"
+issuer_url = "https://accounts.google.com"
+callback_url = "https://ottie.claws.company/_matrix/client/unstable/login/sso/callback/1038048661795-mh80t40gvgquv6gspeup6nfosj2gfdrr.apps.googleusercontent.com"
+default = true

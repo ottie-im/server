@@ -5,6 +5,7 @@ services:
     command: ["-c", "/etc/tuwunel/tuwunel.toml"]
     volumes:
       - ./tuwunel.toml:/etc/tuwunel/tuwunel.toml:ro
+      - ./google-oauth-secret:/etc/tuwunel/google-oauth-secret:ro
       - tuwunel-data:/var/lib/tuwunel
     ports:
       - "8008:8008"
