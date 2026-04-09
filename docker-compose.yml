@@ -9,5 +9,25 @@ services:
     ports:
       - "8008:8008"
 
+  # 生产环境用，本地开发不需要启动
+  # 启动全部：docker compose --profile production up -d
+  # 本地开发：docker compose up -d tuwunel
+  caddy:
+    image: caddy:latest
+    restart: unless-stopped
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    ports:
+      - "443:443"
+      - "8448:8448"
+    depends_on:
+      - tuwunel
+    profiles:
+      - production
+
 volumes:
   tuwunel-data:
+  caddy-data:
+  caddy-config:
