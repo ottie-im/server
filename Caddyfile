@@ -1,6 +1,6 @@
-# 生产环境用，本地开发不需要启动 Caddy
-# 部署时把 ottie.app 换成你的域名
+# TODO: 临时域名，最终改为 ottie 正式域名
+# Caddy 会自动申请 TLS 证书（通过 Cloudflare 代理时不需要）
 
-ottie.app, ottie.app:8448 {
+ottie.claws.company, ottie.claws.company:8448 {
     reverse_proxy tuwunel:8008
 }

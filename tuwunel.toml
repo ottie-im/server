@@ -1,10 +1,12 @@
 [global]
-server_name = "localhost"
+# TODO: 临时域名，最终改为 ottie 正式域名（如 ottie.app）
+# ⚠️ server_name 一旦设定不可更改，迁移 = 重建数据库 + 所有用户重新注册
+server_name = "ottie.claws.company"
 database_path = "/var/lib/tuwunel"
 port = [8008]
 address = "0.0.0.0"
 allow_registration = true
 registration_token = "ottie-dev-token"
-allow_federation = false
-trusted_servers = []
+allow_federation = true
+trusted_servers = ["matrix.org"]
 log = "info"
