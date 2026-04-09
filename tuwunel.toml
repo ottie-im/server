@@ -10,3 +10,8 @@ registration_token = "ottie-dev-token"
 allow_federation = true
 trusted_servers = ["matrix.org"]
 log = "info"
+
+# Well-known for Element and other clients to auto-discover
+[global.well_known]
+client = "https://ottie.claws.company"
+server = "ottie.claws.company:443"
